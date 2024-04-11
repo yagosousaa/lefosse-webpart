@@ -4,7 +4,8 @@ import { DropdownFluentUI } from "../fluentUiComponents/Dropdown";
 
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { Searchbox } from "../fluentUiComponents/Searchbox";
-import { data } from "../data/dataList";
+import { Datagrid } from "../fluentUiComponents/Datagrid";
+// import { data } from "../data/dataList";
 
 export default class Lefosse extends React.Component<ILefosseProps, {}> {
   public render(): React.ReactElement<ILefosseProps> {
@@ -14,9 +15,7 @@ export default class Lefosse extends React.Component<ILefosseProps, {}> {
         <DropdownFluentUI />
         <div>
           <div>
-            {data.map((data) => {
-              return <p key={data.title}>{data.title}</p>;
-            })}
+            <Datagrid />
           </div>
         </div>
       </FluentProvider>
