@@ -1,7 +1,8 @@
 import * as React from "react";
-import { makeStyles, shorthands, useId, Input, Label } from "@fluentui/react-components";
+import { makeStyles, shorthands, Input, Button } from "@fluentui/react-components";
 import type { InputProps } from "@fluentui/react-components";
 import { Search } from "lucide-react";
+import "../fluentUiComponents/Searchbox.scss";
 
 const useStyles = makeStyles({
   root: {
@@ -20,25 +21,36 @@ const useStyles = makeStyles({
   },
 
   icon: {
-    paddingRight: "6px",
+    paddingRight: "4px",
+  },
+
+  title: {
+    fontSize: "1.3rem",
+    fontWeight: "bolder",
+  },
+
+  container_search: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
   },
 });
 
 export const Searchbox = (props: InputProps) => {
-  const inputId = useId("input");
   const styles = useStyles();
 
   return (
     <div className={styles.root}>
-      <Label
-        className={styles.label}
-        htmlFor={inputId}
-        size={props.size}
-        disabled={props.disabled}
-      >
-        <Search className={styles.icon} size={14} /> Pesquisa
-      </Label>
-      <Input id={inputId} {...props} />
+      <div className={styles.label}>
+        <Search className={styles.icon} size={14} />
+        <p className={styles.title}>Pesquisa</p>
+      </div>
+      <div className={styles.container_search}>
+        <Input {...props} />
+        <Button className="buttonSearch" appearance="primary" size="medium">
+          Buscar
+        </Button>
+      </div>
     </div>
   );
 };

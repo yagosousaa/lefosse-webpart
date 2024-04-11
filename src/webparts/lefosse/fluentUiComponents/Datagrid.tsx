@@ -10,106 +10,105 @@ import {
   TableCellLayout,
   TableColumnDefinition,
   createTableColumn,
+  makeStyles,
 } from "@fluentui/react-components";
 import { File } from "lucide-react";
+
+const useStyles = makeStyles({
+  grid: {
+    paddingTop: "2rem",
+  },
+});
 
 type Item = {
   icon: JSX.Element;
   title: string;
-  pais: string;
-  estado: string;
-  cidade: string;
-  bairro: string;
+  colecao: string;
+  tipoDoDocumento: string;
+  idioma: string;
+  ano: number;
 };
 
 const items: Item[] = [
   {
     icon: <File />,
     title: "Documento",
-    pais: "Brasil",
-    estado: "São Paulo",
-    cidade: "São Paulo",
-    bairro: "Moema",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Livro",
+    idioma: "Espanhol",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento1",
-    pais: "Alemanha",
-    estado: "Baviera",
-    cidade: "Munique",
-    bairro: "Schwabing",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Livro",
+    idioma: "Espanhol",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento2",
-    pais: "Alemanha",
-    estado: "Berlim",
-    cidade: "Berlim",
-    bairro: "Mitte",
+    colecao: "Dom Tarcísio",
+    tipoDoDocumento: "Artigo",
+    idioma: "Espanhol",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento3",
-    pais: "Estados Unidos",
-    estado: "Califórnia",
-    cidade: "Los Angeles",
-    bairro: "Hollywood",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Livro",
+    idioma: "Português",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento4",
-    pais: "Estados Unidos",
-    estado: "Nova Iorque",
-    cidade: "Nova Iorque",
-    bairro: "Manhattan",
+    colecao: "Dom Tarcísio",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Italiano",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento5",
-    pais: "Austrália",
-    estado: "Nova Gales do Sul",
-    cidade: "Sydney",
-    bairro: "Darlinghurst",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Espanhol",
+    ano: 1961,
   },
   {
     icon: <File />,
     title: "Documento6",
-    pais: "Austrália",
-    estado: "Vitória",
-    cidade: "Melbourne",
-    bairro: "Fitzroy",
+    colecao: "Dom Tarcísio",
+    tipoDoDocumento: "Livro",
+    idioma: "Italiano",
+    ano: 1964,
   },
   {
     icon: <File />,
     title: "Documento7",
-    pais: "Espanha",
-    estado: "Catalunha",
-    cidade: "Barcelona",
-    bairro: "Gràcia",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Artigo",
+    idioma: "Italiano",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento8",
-    pais: "Espanha",
-    estado: "Catalunha",
-    cidade: "Barcelona",
-    bairro: "Gràcia",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Livro",
+    idioma: "Português",
+    ano: 1962,
   },
   {
     icon: <File />,
     title: "Documento9",
-    pais: "Espanha",
-    estado: "Catalunha",
-    cidade: "Barcelona",
-    bairro: "Gràcia",
-  },
-  {
-    icon: <File />,
-    title: "Documento10",
-    pais: "Brasil",
-    estado: "Rio de Janeiro",
-    cidade: "Rio de Janeiro",
-    bairro: "Copacabana",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Português",
+    ano: 1962,
   },
 ];
 
@@ -125,44 +124,36 @@ const columns: TableColumnDefinition<Item>[] = [
   }),
 
   createTableColumn<Item>({
-    columnId: "countrie",
+    columnId: "colection",
     renderHeaderCell: () => {
-      return "País";
+      return "Coleção";
     },
     renderCell: (item) => {
-      return <TableCellLayout>{item.pais}</TableCellLayout>;
+      return <TableCellLayout>{item.colecao}</TableCellLayout>;
     },
   }),
   createTableColumn<Item>({
-    columnId: "state",
+    columnId: "typeOfDocument",
     renderHeaderCell: () => {
-      return "Estado";
+      return "Tipo do Documento";
     },
     renderCell: (item) => {
-      return <TableCellLayout>{item.estado}</TableCellLayout>;
+      return <TableCellLayout>{item.tipoDoDocumento}</TableCellLayout>;
     },
   }),
   createTableColumn<Item>({
-    columnId: "city",
+    columnId: "language",
     renderHeaderCell: () => {
-      return "Cidade";
+      return "Idioma";
     },
     renderCell: (item) => {
-      return <TableCellLayout>{item.cidade}</TableCellLayout>;
-    },
-  }),
-  createTableColumn<Item>({
-    columnId: "neighborhood",
-    renderHeaderCell: () => {
-      return "Bairro";
-    },
-    renderCell: (item) => {
-      return <TableCellLayout>{item.bairro}</TableCellLayout>;
+      return <TableCellLayout>{item.idioma}</TableCellLayout>;
     },
   }),
 ];
 
 export const Datagrid = () => {
+  const styles = useStyles();
   return (
     <DataGrid
       items={items}
@@ -170,6 +161,7 @@ export const Datagrid = () => {
       sortable
       getRowId={(item) => item.title}
       focusMode="composite"
+      className={styles.grid}
     >
       <DataGridHeader>
         <DataGridRow>
