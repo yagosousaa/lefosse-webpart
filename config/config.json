@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "lefosse-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/lefosse/LefosseWebPart.js",
+          "manifest": "./src/webparts/lefosse/LefosseWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LefosseWebPartStrings": "lib/webparts/lefosse/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "lefosse-client-side-solution",
+    "id": "7d046b85-4d20-4e38-92a2-77721f153c38",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "lefosse description"
+      },
+      "longDescription": {
+        "default": "lefosse description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "lefosse Feature",
+        "description": "The feature that activates elements of the lefosse solution.",
+        "id": "7ca8e82b-4b5d-43e7-ab37-5f7b3e6960c7",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/lefosse.sppkg"
+  }
+}
