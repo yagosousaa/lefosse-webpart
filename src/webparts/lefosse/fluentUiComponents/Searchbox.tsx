@@ -8,11 +8,14 @@ const useStyles = makeStyles({
   root: {
     // Stack the label above the field
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "end",
+    alignItems: "center",
+    width: "full",
+    minHeight: "52px",
     // Use 2px gap below the label (per the design system)
     ...shorthands.gap("2px"),
     // Prevent the example from taking the full width of the page (optional)
-    maxWidth: "400px",
   },
 
   label: {
@@ -22,11 +25,6 @@ const useStyles = makeStyles({
 
   icon: {
     paddingRight: "4px",
-  },
-
-  title: {
-    fontSize: "1.3rem",
-    fontWeight: "bolder",
   },
 
   container_search: {
@@ -42,11 +40,10 @@ export const Searchbox = (props: InputProps) => {
   return (
     <div className={styles.root}>
       <div className={styles.label}>
-        <Search className={styles.icon} size={14} />
-        <p className={styles.title}>Pesquisa</p>
+        <Search className={styles.icon} size={20} />
       </div>
       <div className={styles.container_search}>
-        <Input {...props} />
+        <Input placeholder="Pesquisar..." {...props} />
         <Button className="buttonSearch" appearance="primary" size="medium">
           Buscar
         </Button>

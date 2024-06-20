@@ -12,6 +12,8 @@ import * as strings from "LefosseWebPartStrings";
 import Lefosse from "./components/Lefosse";
 import { ILefosseProps } from "./components/ILefosseProps";
 
+import { getSP } from "../../pnpjs.config";
+
 export interface ILefosseWebPartProps {
   description: string;
 }
@@ -27,15 +29,21 @@ export default class LefosseWebPart extends BaseClientSideWebPart<ILefosseWebPar
       environmentMessage: this._environmentMessage,
       hasTeamsContext: !!this.context.sdks.microsoftTeams,
       userDisplayName: this.context.pageContext.user.displayName,
+      context: this.context,
     });
 
     ReactDom.render(element, this.domElement);
   }
 
-  protected onInit(): Promise<void> {
-    return this._getEnvironmentMessage().then((message) => {
-      this._environmentMessage = message;
-    });
+  protected async onInit(): Promise<void> {
+    await super.onInit();
+
+    return (
+      getSP(this.context) &&
+      this._getEnvironmentMessage().then((message) => {
+        this._environmentMessage = message;
+      })
+    );
   }
 
   private _getEnvironmentMessage(): Promise<string> {

@@ -16,6 +16,7 @@ const useStyles = makeStyles({
   label: {
     display: "flex",
     alignItems: "center",
+    width: "100vw",
   },
 
   icon: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
   },
 
   title: {
-    fontSize: "1.3rem",
+    fontSize: "1rem",
     fontWeight: "bolder",
   },
 
@@ -44,7 +45,7 @@ export const FilterComponent = (props: Partial<DropdownProps>) => {
   return (
     <div className={styles.root}>
       <label className={styles.label}>
-        <Filter className={styles.icon} size={14} />
+        <Filter className={styles.icon} size={16} />
         <p className={styles.title}>Filtros</p>
       </label>
       <Divider />
