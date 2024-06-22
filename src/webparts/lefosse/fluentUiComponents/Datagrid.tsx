@@ -29,9 +29,9 @@ type Item = {
   ano: number;
 };
 
-const items: Item[] = [
+export const items: Item[] = [
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento",
     colecao: "Pesquisas Religiosas",
     tipoDoDocumento: "Livro",
@@ -39,7 +39,7 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento1",
     colecao: "Santo Afonso",
     tipoDoDocumento: "Livro",
@@ -47,7 +47,7 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento2",
     colecao: "Dom Tarcísio",
     tipoDoDocumento: "Artigo",
@@ -55,7 +55,7 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento3",
     colecao: "Pesquisas Religiosas",
     tipoDoDocumento: "Livro",
@@ -63,7 +63,7 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento4",
     colecao: "Dom Tarcísio",
     tipoDoDocumento: "Multimídia",
@@ -71,7 +71,7 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento5",
     colecao: "Santo Afonso",
     tipoDoDocumento: "Multimídia",
@@ -79,7 +79,7 @@ const items: Item[] = [
     ano: 1961,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento6",
     colecao: "Dom Tarcísio",
     tipoDoDocumento: "Livro",
@@ -87,7 +87,7 @@ const items: Item[] = [
     ano: 1964,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento7",
     colecao: "Santo Afonso",
     tipoDoDocumento: "Artigo",
@@ -95,7 +95,7 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento8",
     colecao: "Santo Afonso",
     tipoDoDocumento: "Livro",
@@ -103,8 +103,120 @@ const items: Item[] = [
     ano: 1962,
   },
   {
-    icon: <File />,
+    icon: <File size={18} />,
     title: "Documento9",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento10",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento11",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento12",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Livro",
+    idioma: "Espanhol",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento13",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Livro",
+    idioma: "Espanhol",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento14",
+    colecao: "Dom Tarcísio",
+    tipoDoDocumento: "Artigo",
+    idioma: "Espanhol",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento15",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Livro",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento16",
+    colecao: "Dom Tarcísio",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Italiano",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento17",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Espanhol",
+    ano: 1961,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento18",
+    colecao: "Dom Tarcísio",
+    tipoDoDocumento: "Livro",
+    idioma: "Italiano",
+    ano: 1964,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento19",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Artigo",
+    idioma: "Italiano",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento20",
+    colecao: "Santo Afonso",
+    tipoDoDocumento: "Livro",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento21",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento22",
+    colecao: "Pesquisas Religiosas",
+    tipoDoDocumento: "Multimídia",
+    idioma: "Português",
+    ano: 1962,
+  },
+  {
+    icon: <File size={18} />,
+    title: "Documento23",
     colecao: "Pesquisas Religiosas",
     tipoDoDocumento: "Multimídia",
     idioma: "Português",
@@ -148,6 +260,15 @@ const columns: TableColumnDefinition<Item>[] = [
     },
     renderCell: (item) => {
       return <TableCellLayout>{item.idioma}</TableCellLayout>;
+    },
+  }),
+  createTableColumn<Item>({
+    columnId: "year",
+    renderHeaderCell: () => {
+      return "Ano";
+    },
+    renderCell: (item) => {
+      return <TableCellLayout>{item.ano}</TableCellLayout>;
     },
   }),
 ];

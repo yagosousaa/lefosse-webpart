@@ -48,7 +48,9 @@ export const FilterComponent = (props: Partial<DropdownProps>) => {
         <Filter className={styles.icon} size={16} />
         <p className={styles.title}>Filtros</p>
       </label>
-      <Divider />
+      <div>
+        <Divider />
+      </div>
 
       <div>
         <p className={styles.titleFilter}>Coleção</p>
