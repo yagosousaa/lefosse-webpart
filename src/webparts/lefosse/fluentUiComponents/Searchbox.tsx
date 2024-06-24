@@ -1,8 +1,10 @@
 import * as React from "react";
-import { makeStyles, shorthands, Input, Button } from "@fluentui/react-components";
-import type { InputProps } from "@fluentui/react-components";
+import { makeStyles, shorthands, Button, SearchBox } from "@fluentui/react-components";
+import type { SearchBoxProps } from "@fluentui/react-components";
 import "../fluentUiComponents/Searchbox.scss";
 import { Search } from "lucide-react";
+import { ChangeEvent, useState } from "react";
+import { items } from "./Datagrid";
 
 const useStyles = makeStyles({
   root: {
@@ -23,32 +25,42 @@ const useStyles = makeStyles({
     minHeight: "52px",
   },
 
-  label: {
-    display: "flex",
-    alignItems: "center",
-  },
-
   container_search: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
   },
 
-  searchBox: {
-    width: "250px",
+  search_box: {
+    minWidth: "300px",
   },
 });
 
-export const Searchbox = (props: InputProps) => {
+export const Searchbox = (props: SearchBoxProps) => {
   const styles = useStyles();
+  const [search, setSearch] = useState("");
+
+  const filteredNotes =
+    search !== ""
+      ? items.filter((item) =>
+          item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        )
+      : items;
+
+  function handleSearch(event: ChangeEvent<HTMLInputElement>) {
+    const query = event.target.value;
+
+    setSearch(query);
+  }
 
   return (
     <div className={styles.section}>
       <div className={styles.root}>
         <div className={styles.container_search}>
-          <Input
-            className={styles.searchBox}
+          <SearchBox
+            className={styles.search_box}
             placeholder="Digite sua pesquisa..."
+            onChange={handleSearch}
             {...props}
           />
           <Button
