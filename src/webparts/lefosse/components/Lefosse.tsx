@@ -2,9 +2,8 @@ import * as React from "react";
 import type { ILefosseProps } from "./ILefosseProps";
 import { FilterComponent } from "../fluentUiComponents/Filter";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
-import { Searchbox } from "../fluentUiComponents/Searchbox";
-import { Datagrid } from "../fluentUiComponents/Datagrid";
 import styles from "./Lefosse.module.scss";
+import { DetailsListDocuments } from "../fluentUiComponents/DetailList";
 
 // import { SPFI } from "@pnp/sp";
 // import { getSP } from "../../../pnpjs.config";
@@ -29,8 +28,7 @@ export default class Lefosse extends React.Component<ILefosseProps, {}> {
           <div className={styles.container_content}>
             <FilterComponent />
             <div>
-              <Searchbox />
-              <Datagrid />
+              <DetailsListDocuments />
             </div>
           </div>
         </section>
