@@ -16,16 +16,6 @@ const classNames = mergeStyleSets({
   },
   fileIconCell: {
     textAlign: "center",
-    selectors: {
-      "&:before": {
-        content: ".",
-        display: "inline-block",
-        verticalAlign: "middle",
-        height: "100%",
-        width: "0px",
-        visibility: "hidden",
-      },
-    },
   },
   fileIconImg: {
     verticalAlign: "middle",
@@ -35,7 +25,7 @@ const classNames = mergeStyleSets({
   controlWrapper: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "end",
+    justifyContent: "start",
     flexWrap: "wrap",
   },
 
@@ -45,7 +35,7 @@ const classNames = mergeStyleSets({
 });
 const controlStyles = {
   root: {
-    margin: "0 0 0px 4rem",
+    margin: "0 0 0px 3rem",
     borderRadius: "4px",
     width: "300px",
   },
@@ -65,7 +55,7 @@ export interface IDocument {
   colection: string;
   typeOfDocument: string;
   language: string;
-  year: number;
+  year: string;
 }
 
 export class DetailsListDocuments extends React.Component<
@@ -136,8 +126,8 @@ export class DetailsListDocuments extends React.Component<
         key: "column4",
         name: "Tipo de Documento",
         fieldName: "typeOfDocument",
-        minWidth: 90,
-        maxWidth: 120,
+        minWidth: 120,
+        maxWidth: 180,
         isResizable: true,
         isCollapsible: true,
         data: "string",
@@ -224,7 +214,15 @@ export class DetailsListDocuments extends React.Component<
   ): void => {
     this.setState({
       items: text
-        ? this._allItems.filter((i) => i.name.toLowerCase().indexOf(text) > -1)
+        ? this._allItems.filter(
+            (i) =>
+              i.name.toLowerCase().indexOf(text) > -1 ||
+              i.colection.toLowerCase().indexOf(text) > -1 ||
+              i.fileType.toLowerCase().indexOf(text) > -1 ||
+              i.language.toLowerCase().indexOf(text) > -1 ||
+              i.typeOfDocument.toLowerCase().indexOf(text) > -1 ||
+              i.year.toLowerCase().indexOf(text) > -1
+          )
         : this._allItems,
     });
   };
@@ -280,7 +278,7 @@ function _copyAndSort<T>(
 
 function _generateDocuments() {
   const items: IDocument[] = [];
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 50; i++) {
     const randomYear = _gerarAnoAleatorio();
     const randomFileType = _randomFileIcon();
     const randomColection: string = _randomColection();
@@ -309,7 +307,7 @@ function _generateDocuments() {
   return items;
 }
 
-function _gerarAnoAleatorio(): number {
+function _gerarAnoAleatorio(): string {
   const anoInicial: number = 1990;
   const anoFinal: number = 2024;
 
@@ -319,8 +317,7 @@ function _gerarAnoAleatorio(): number {
   // Calcula um número inteiro entre anoInicial e anoFinal, inclusivo
   const anoAleatorio: number =
     Math.floor(randomFraction * (anoFinal - anoInicial + 1)) + anoInicial;
-
-  return anoAleatorio;
+  return anoAleatorio.toString();
 }
 
 function _randomColection(): string {
