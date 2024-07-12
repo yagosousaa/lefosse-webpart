@@ -1,0 +1,37 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  padding-right: 6px;
+}
+
+.h1 {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 0 0 1rem 0;
+}
+
+.titleFilter {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.containerFilter {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,11 +1,11 @@
 import * as React from "react";
 import type { ILefosseProps } from "./ILefosseProps";
-import { FilterComponent } from "../fluentUiComponents/Filter";
+import { FilterComponent } from "./components/filter/Filter";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import styles from "./Lefosse.module.scss";
-import { DetailsListDocuments } from "../fluentUiComponents/DetailList";
-import { Header } from "../fluentUiComponents/Header";
-import { Footer } from "../fluentUiComponents/Footer";
+import { DocumentCardCompact } from "./components/dataList/DataList";
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
 
 export default class Lefosse extends React.Component<ILefosseProps, {}> {
   public render(): React.ReactElement<ILefosseProps> {
@@ -16,7 +16,7 @@ export default class Lefosse extends React.Component<ILefosseProps, {}> {
           <div className={styles.container_content}>
             <FilterComponent />
             <div>
-              <DetailsListDocuments />
+              <DocumentCardCompact />
             </div>
           </div>
           <Footer />

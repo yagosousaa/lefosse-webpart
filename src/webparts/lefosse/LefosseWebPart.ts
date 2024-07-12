@@ -9,10 +9,8 @@ import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 
 import * as strings from "LefosseWebPartStrings";
-import Lefosse from "./components/Lefosse";
-import { ILefosseProps } from "./components/ILefosseProps";
-
-import { getSP } from "../../pnpjs.config";
+import Lefosse from "./Lefosse";
+import { ILefosseProps } from "./ILefosseProps";
 
 export interface ILefosseWebPartProps {
   description: string;
@@ -38,12 +36,9 @@ export default class LefosseWebPart extends BaseClientSideWebPart<ILefosseWebPar
   protected async onInit(): Promise<void> {
     await super.onInit();
 
-    return (
-      getSP(this.context) &&
-      this._getEnvironmentMessage().then((message) => {
-        this._environmentMessage = message;
-      })
-    );
+    return this._getEnvironmentMessage().then((message) => {
+      this._environmentMessage = message;
+    });
   }
 
   private _getEnvironmentMessage(): Promise<string> {

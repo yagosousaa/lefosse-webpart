@@ -1,0 +1,35 @@
+.searchBox {
+  background-color: #ebebeb;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin: 0 17rem 1rem 4rem;
+}
+
+.mainContainer {
+  padding: 2rem 1rem 1rem 2rem;
+}
+
+.documentCard {
+  max-width: 880px;
+  min-height: 120px;
+}
+
+.detailsDocumentCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+p {
+  margin: 0 0 0 1rem;
+}
+
+.previewImage {
+  max-height: 100%;
+}
+
+.controlStyles {
+  min-width: 500px;
+  padding: 0 0 0 0.5rem;
+}
