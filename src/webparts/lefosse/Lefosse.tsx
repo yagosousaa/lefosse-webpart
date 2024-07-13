@@ -11,7 +11,7 @@ export default class Lefosse extends React.Component<ILefosseProps, {}> {
   public render(): React.ReactElement<ILefosseProps> {
     return (
       <FluentProvider theme={webLightTheme}>
-        <section>
+        <section className={styles.root}>
           <Header />
           <div className={styles.container_content}>
             <FilterComponent />

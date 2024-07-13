@@ -2,11 +2,9 @@ import * as React from "react";
 import { Stack, IStackTokens } from "@fluentui/react/lib/Stack";
 import { TextField } from "@fluentui/react";
 import styles from "./DataList.module.scss";
-import { DocumentsCard } from "../documentsCard/DocumentsCard";
-import { items } from "../../services/data";
+import { DocumentCard } from "../documentsCard/DocumentsCard";
 
 const stackTokens: IStackTokens = { childrenGap: 20 };
-const allItems = items;
 
 export const DocumentCardCompact: React.FunctionComponent = () => {
   return (
@@ -19,7 +17,7 @@ export const DocumentCardCompact: React.FunctionComponent = () => {
       </div>
       <div className={styles.mainContainer}>
         <Stack tokens={stackTokens}>
-          <DocumentsCard items={allItems} />
+          <DocumentCard />
         </Stack>
       </div>
     </>
