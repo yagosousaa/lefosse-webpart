@@ -55,3 +55,21 @@ strong {
   font-weight: 600;
   color: #393939;
 }
+
+.child {
+  height: "100px";
+  line-height: "100px";
+  width: "100%";
+}
+
+.searchBox {
+  display: "block";
+  min-width: 400px;
+
+  background-color: #ebebeb;
+  padding: 1rem;
+}
+
+.searchContainer {
+  margin: -14px 0 2rem 2rem;
+}

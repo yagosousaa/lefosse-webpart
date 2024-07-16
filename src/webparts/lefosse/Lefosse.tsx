@@ -5,7 +5,6 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import styles from "./Lefosse.module.scss";
 import { DocumentCardCompact } from "./components/dataList/DataList";
 import { Header } from "./components/header/Header";
-import { Footer } from "./components/footer/Footer";
 
 export default class Lefosse extends React.Component<ILefosseProps, {}> {
   public render(): React.ReactElement<ILefosseProps> {
@@ -19,7 +18,6 @@ export default class Lefosse extends React.Component<ILefosseProps, {}> {
               <DocumentCardCompact />
             </div>
           </div>
-          <Footer />
         </section>
       </FluentProvider>
     );
