@@ -17,6 +17,7 @@
 
 .tipoDocumental {
   font-weight: normal;
+  cursor: default;
 }
 
 ol {
@@ -30,12 +31,24 @@ li {
   padding: 0;
   text-indent: 0;
   list-style-type: none;
+  font-size: 12px;
+}
+
+.titleDocument {
+  cursor: pointer;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.titleDocument:hover {
+  color: #057cd2;
+  text-decoration: underline;
 }
 
 .detailsDocument {
   display: flex;
   flex-direction: column;
-  padding: 0 0 1rem 1rem;
+  padding: 0 0 0.5rem 0.5rem;
+  cursor: default;
 }
 
 strong {

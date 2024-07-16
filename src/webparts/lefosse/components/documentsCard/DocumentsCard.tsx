@@ -5,7 +5,6 @@ import { items } from "../../services/data";
 interface IDocumentCard {
   items: IDocument[];
 }
-
 export interface IDocument {
   key: number;
   tipoDocumental: string;
@@ -32,12 +31,12 @@ export class DocumentCard extends React.Component<{}, IDocumentCard> {
     return (
       <div>
         {items.map((item) => (
-          <div className={styles.cardContainer}>
+          <div className={styles.cardContainer} key={item.key}>
             <div className={styles.previewDocument}>
               <h1 className={styles.tipoDocumental}>{item.tipoDocumental}</h1>
             </div>
             <div className={styles.detailsDocument}>
-              <h1>{item.titulo}</h1>
+              <h1 className={styles.titleDocument}>{item.titulo}</h1>
               <li>
                 <ol>
                   <strong>Subtipo Documental:</strong> {item.subtipoDocumental}

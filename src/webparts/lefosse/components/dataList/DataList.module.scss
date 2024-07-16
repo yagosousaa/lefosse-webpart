@@ -3,11 +3,22 @@
   padding: 0.5rem;
   display: flex;
   align-items: center;
-  margin: 0 17rem 1rem 4rem;
+  margin: 0 235px 1rem 4rem;
+}
+
+.searchButton {
+  background-color: #057cd2;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin: 0 0 0 1rem;
+  font-weight: 600;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .mainContainer {
-  padding: 2rem 1rem 1rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
 }
 
 .documentCard {
