@@ -5,6 +5,37 @@
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e4efff;
+
+  *::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #dfe9eb;
+  }
+
+  *::-webkit-scrollbar-track:hover {
+    background-color: #dfe9eb;
+  }
+
+  *::-webkit-scrollbar-track:active {
+    background-color: #dfe9eb;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #3f85ed;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #448fff;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #448fff;
+  }
 }
 
 .container_search {
@@ -17,6 +48,7 @@
 .container_content {
   display: grid;
   grid-template-columns: 18rem 1fr;
+  padding: 0 2rem;
 }
 
 .section {

@@ -1,18 +1,23 @@
 .cardContainer {
   min-height: 7rem;
-  display: flex;
   border: 1px solid #605e5c7a;
+  background-color: white;
   margin: 0 0 1rem 0;
+  border-radius: 4px;
 }
-.previewDocument {
-  background-color: #faf9f8;
-  min-height: 100%;
-  min-width: 5rem;
-  border-right: 1px solid #605e5c7a;
 
+.headerDocument {
+  background-color: #faf9f8;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  max-height: 2rem;
+  min-width: 4rem;
+  border-bottom: 1px solid #605e5c7a;
   align-items: center;
+  padding: 0 0.5rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .tipoDocumental {
@@ -24,6 +29,7 @@ ol {
   margin: 0;
   padding: 0;
   text-indent: 0;
+  font-size: 12px;
 }
 
 li {
@@ -31,12 +37,10 @@ li {
   padding: 0;
   text-indent: 0;
   list-style-type: none;
-  font-size: 12px;
 }
 
 .titleDocument {
   cursor: pointer;
-  margin: 0.5rem 0 0.5rem 0;
 }
 
 .titleDocument:hover {
@@ -45,10 +49,14 @@ li {
 }
 
 .detailsDocument {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0 0.5rem 0.5rem;
   cursor: default;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.5rem;
+  min-height: 72px;
 }
 
 strong {
@@ -57,19 +65,42 @@ strong {
 }
 
 .child {
-  height: "100px";
-  line-height: "100px";
-  width: "100%";
+  margin: 0 0.5rem 0 0;
 }
 
 .searchBox {
-  display: "block";
-  min-width: 400px;
-
-  background-color: #ebebeb;
-  padding: 1rem;
+  min-width: 680px;
 }
 
 .searchContainer {
-  margin: -14px 0 2rem 2rem;
+  margin: -14px 0 1rem 0;
+  display: flex;
+  gap: 8px;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.liHorizontal {
+  display: flex;
+  gap: 1rem;
+}
+
+.treeItem {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.listScroll {
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  min-height: 510px;
+}
+
+.inputSearch {
+  width: 670px;
+  border: none;
+  outline: none;
 }
