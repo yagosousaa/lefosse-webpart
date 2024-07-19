@@ -76,8 +76,6 @@ strong {
   margin: -14px 0 1rem 0;
   display: flex;
   gap: 8px;
-  background-color: white;
-  padding: 0.5rem;
   border-radius: 4px;
 }
 
@@ -94,13 +92,35 @@ strong {
 
 .listScroll {
   background-color: white;
-  padding: 0.5rem;
+  padding: 0.8rem 0.4rem 0.8rem 0.8rem;
   border-radius: 4px;
   min-height: 510px;
 }
 
 .inputSearch {
-  width: 670px;
-  border: none;
-  outline: none;
+  text-overflow: ellipsis;
+  width: 570px;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.iconClass {
+  cursor: pointer;
+  position: absolute;
+  right: 7px;
+  top: 13px;
+}
+
+.iconClass:hover {
+  background-color: #9a9a9a69;
+}
+
+.iconClass:active {
+  color: #057cd2;
+}
+
+.inputContainer {
+  display: flex;
+  position: relative;
 }

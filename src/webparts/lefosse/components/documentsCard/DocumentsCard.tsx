@@ -1,6 +1,6 @@
 import * as React from "react";
 import styles from "./DocumentsCard.module.scss";
-import { items } from "../../services/data";
+import { items } from "../../services/spsListServices";
 import { VirtualizerScrollView } from "@fluentui/react-components/unstable";
 import { TextField } from "@fluentui/react";
 import { Tree, TreeItem, TreeItemLayout, Button } from "@fluentui/react-components";
@@ -11,6 +11,7 @@ import {
   Document,
   Livro,
 } from "../../interfaces/interfaces";
+import { X } from "lucide-react";
 
 interface IDocumentCard {
   items: BaseDocument[];
@@ -38,13 +39,23 @@ export class DocumentCard extends React.Component<{}, IDocumentCard> {
       return (
         <div>
           <div className={styles.searchContainer}>
-            <TextField
-              onChange={this._onChangeText}
-              className={styles.inputSearch}
-              placeholder="Digite para pesquisar..."
-            />
+            <div className={styles.inputContainer}>
+              <TextField
+                className={styles.inputSearch}
+                placeholder="Digite para pesquisar..."
+                value={this.state.inputText}
+                onChange={this._onChangeText}
+                onKeyDown={this._onKeyDown}
+                borderless
+              />
+              {this.state.inputText.length > 1 ? (
+                <X size={20} onClick={this._onClearInput} className={styles.iconClass} />
+              ) : (
+                ""
+              )}
+            </div>
 
-            <Button onClick={this._onSearchItems} appearance="primary">
+            <Button onClick={this._onSearchItems} size="small" appearance="primary">
               Buscar
             </Button>
           </div>
@@ -214,5 +225,15 @@ export class DocumentCard extends React.Component<{}, IDocumentCard> {
           )
         : this._allItems,
     });
+  };
+
+  private _onClearInput = (): void => {
+    this.setState({ inputText: "", items: this._allItems });
+  };
+
+  private _onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (event.key === "Enter") {
+      this._onSearchItems();
+    }
   };
 }
